@@ -7,43 +7,24 @@ class PantallaSiete extends StatefulWidget {
   const PantallaSiete({Key? key}) : super(key: key);
 
   @override
-  State<PantallaSiete> createState() => _Widget065State();
+  State<PantallaSiete> createState() => _PantallaSieteState();
 }
 
-class _Widget065State extends State<PantallaSiete> {
+class _PantallaSieteState extends State<PantallaSiete> {
   int _sliding = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        centerTitle: true,
-        title: const Text(
-          'Pantalla 7',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20.0,
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.notifications, color: Colors.white),
-            onPressed: () {
-              // Acción de notificaciones
-            },
-          ),
-        ],
-        leading: IconButton(
-          icon: const Icon(Icons.menu, color: Colors.white),
-          onPressed: () {
-            // Acción del menú
-          },
-        ),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(25),
-            bottomRight: Radius.circular(25),
+        backgroundColor: Colors.blue, // Fondo azul
+        title: const Center(
+          child: Text(
+            'Pantalla 7',
+            style: TextStyle(
+              color: Colors.white, // Letra blanca
+              fontSize: 20.0, // Tamaño de la letra 20
+            ),
           ),
         ),
       ),
