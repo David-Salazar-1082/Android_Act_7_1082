@@ -11,20 +11,39 @@ class PantallaSiete extends StatefulWidget {
 }
 
 class _Widget065State extends State<PantallaSiete> {
-  int _sliding = 0; // Utilizamos un valor de tipo entero no nulo
+  int _sliding = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue, // Fondo azul
-        title: const Center(
-          child: Text(
-            'Pantalla 7',
-            style: TextStyle(
-              color: Colors.white, // Letra blanca
-              fontSize: 20.0, // Tamaño de la letra 20
-            ),
+        backgroundColor: Colors.blue,
+        centerTitle: true,
+        title: const Text(
+          'Pantalla 7',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20.0,
+          ),
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.notifications, color: Colors.white),
+            onPressed: () {
+              // Acción de notificaciones
+            },
+          ),
+        ],
+        leading: IconButton(
+          icon: const Icon(Icons.menu, color: Colors.white),
+          onPressed: () {
+            // Acción del menú
+          },
+        ),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(25),
+            bottomRight: Radius.circular(25),
           ),
         ),
       ),
@@ -32,15 +51,15 @@ class _Widget065State extends State<PantallaSiete> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CupertinoSlidingSegmentedControl<int>(
-            children: {
-              0: const Text('Text 0'),
-              1: const Text('Text 1'),
-              2: const Text('Text 2'),
+            children: const {
+              0: Text('Text 0'),
+              1: Text('Text 1'),
+              2: Text('Text 2'),
             },
             groupValue: _sliding,
             onValueChanged: (int? newValue) {
               setState(() {
-                _sliding = newValue ?? 0; // En caso de null, default a 0
+                _sliding = newValue ?? 0;
               });
             },
           ),
